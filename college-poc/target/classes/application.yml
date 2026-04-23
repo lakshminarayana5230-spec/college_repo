@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: college-poc
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/collegedb
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  flyway:
+    enabled: false
+
+  jpa:
+    hibernate:
+      # POC: create schema/tables at startup; do NOT drop schema on shutdown
+      ddl-auto: create
+    properties:
+      hibernate:
+        # Use the college schema for all tables
+        default_schema: college
+
+server:
+  port: 8082
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui
+    tags-sorter: "none"
+    operations-sorter: "alpha"
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
