@@ -37,7 +37,6 @@ public class EnrollmentController {
   public Enrollment get(@Parameter(example = "1") @PathVariable Long id) {
     return svc.get(id);
   }
-
   @Operation(
       summary = "Create enrollment",
       description = "Creates a student-course enrollment. Status is set automatically (initially PENDING; becomes ACTIVE after payment SUCCESS).")
