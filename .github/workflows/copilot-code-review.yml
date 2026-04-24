@@ -19,7 +19,10 @@ jobs:
 
     steps:
       - name: Run Copilot Review
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4        
+      - name: CodeRabbit AI Review
+        uses: coderabbitai/ai-pr-reviewer@latest
+
         with:
           review_level: full
           prompt: |
